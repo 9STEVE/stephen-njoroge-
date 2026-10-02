@@ -278,8 +278,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .contact__list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: .8rem; }
 .contact__list li { display: flex; align-items: center; gap: .75rem; }
 .contact__list span { width: 80px; color: var(--muted); font-size: .92rem; flex-shrink: 0; }
-.contact__icon { width: 18px; height: 18px; flex: 0 0 18px; fill: none; stroke: var(--contact-link); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.contact__icon--github { fill: var(--contact-link); stroke: none; }
+.contact__icon { width: 22px; flex: 0 0 22px; color: var(--contact-link); font-size: 1.15rem; text-align: center; }
+.contact__icon--whatsapp { color: #25D366; }
 .contact__list a { color: var(--contact-link); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; overflow-wrap: anywhere; }
 .contact__list a:hover { color: var(--text); }
 .form { display: flex; flex-direction: column; gap: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.75rem; }
