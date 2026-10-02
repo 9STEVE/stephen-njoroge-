@@ -272,6 +272,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stat dd { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; letter-spacing: -0.03em; color: var(--accent); }
 .stat dt { color: var(--muted); font-size: .9rem; }
 
+/* ===================== CV ===================== */
+.cv__viewer {
+  display: block; width: 100%; height: min(80vh, 1000px); min-height: 600px;
+  border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface);
+}
+
 /* ===================== CONTACT ===================== */
 .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
 .contact > div > p { margin-top: .75rem; color: var(--muted); max-width: 45ch; }
