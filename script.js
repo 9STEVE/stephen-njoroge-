@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---------- Skills: edit this list to change your skills ---------- */
   const skills = [
     { name: "Vue 3", cat: "Frontend" },
-    { name: "Nuxt 4", cat: "Frontend" },
     { name: "React", cat: "Frontend" },
     { name: "Angular", cat: "Frontend" },
     { name: "Laravel", cat: "Backend" },
@@ -84,19 +83,21 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Kotlin", cat: "Backend" },
     { name: "Go", cat: "Backend" },
     { name: "Flutter", cat: "Mobile" },
-    { name: "Kotlin Android", cat: "Mobile" },
     { name: "Docker", cat: "DevOps" },
     { name: "Kubernetes", cat: "DevOps" },
-    { name: "Helm", cat: "DevOps" },
   ];
 
   const list = document.getElementById("skillsList");
   const filterBar = document.getElementById("skillFilters");
-  const initials = name => name.replace(/[^A-Za-z ]/g, " ").split(" ").filter(Boolean)
-    .map(w => w[0]).join("").slice(0, 2).toUpperCase();
+  const categoryIcons = {
+    Frontend: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M3 9h18"/></svg>',
+    Backend: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/></svg>',
+    Mobile: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>',
+    DevOps: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9a4.5 4.5 0 0 0 1 9Z"/><path d="m9 13 3-3 3 3m-3-3v7"/></svg>',
+  };
 
   list.innerHTML = skills.map(s =>
-    `<li class="skill" data-cat="${s.cat}"><span class="skill__mark">${initials(s.name)}</span>${s.name}</li>`
+    `<li class="skill" data-cat="${s.cat}"><span class="skill__mark">${categoryIcons[s.cat]}</span>${s.name}</li>`
   ).join("");
 
   const cats = ["All", ...new Set(skills.map(s => s.cat))];

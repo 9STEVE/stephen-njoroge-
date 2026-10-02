@@ -7,6 +7,7 @@
   --muted: #8FA1BE;       /* secondary text */
   --accent: #F5B841;      /* marigold */
   --accent-ink: #1B1404;  /* text on accent */
+  --contact-link: #8CC8FF;
   --ok: #4FD18B;
 
   --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
@@ -26,6 +27,7 @@
   --muted: #5A6B87;
   --accent: #C9860A;
   --accent-ink: #FFFFFF;
+  --contact-link: #1769AA;
   --ok: #1E9E5A;
   color-scheme: light;
 }
@@ -257,6 +259,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   display: grid; place-items: center; font-size: .72rem; font-weight: 700;
   background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent);
 }
+.skill__mark svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .skill.is-hidden { display: none; }
 
 /* ===================== ABOUT ===================== */
@@ -273,10 +276,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; }
 .contact > div > p { margin-top: .75rem; color: var(--muted); max-width: 45ch; }
 .contact__list { margin-top: 1.75rem; display: flex; flex-direction: column; gap: .8rem; }
-.contact__list li { display: flex; gap: 1rem; }
+.contact__list li { display: flex; align-items: center; gap: .75rem; }
 .contact__list span { width: 80px; color: var(--muted); font-size: .92rem; flex-shrink: 0; }
-.contact__list a { text-decoration: none; font-weight: 500; word-break: break-all; }
-.contact__list a:hover { color: var(--accent); }
+.contact__icon { width: 18px; height: 18px; flex: 0 0 18px; fill: none; stroke: var(--contact-link); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.contact__icon--github { fill: var(--contact-link); stroke: none; }
+.contact__list a { color: var(--contact-link); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; overflow-wrap: anywhere; }
+.contact__list a:hover { color: var(--text); }
 .form { display: flex; flex-direction: column; gap: 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.75rem; }
 .field { display: flex; flex-direction: column; gap: .35rem; }
 .field label { font-size: .9rem; font-weight: 600; }
